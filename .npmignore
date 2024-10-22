@@ -1,0 +1,21 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# ESLint config
+.eslintrc
+eslint.config.mjs
+
+# Build
+tsconfig.json
+
+# Editor
+.vscode/
+.idea/
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
