@@ -1,21 +1,17 @@
-# Logs
+/.vscode
+/.idea
+/node_modules
+/__mocks__
+/__tests__
+/tests
+/src
+.npm
+.eslintrc
 logs
 *.log
-npm-debug.log*
-
-# ESLint config
-.eslintrc
-eslint.config.mjs
-
-# Build
-tsconfig.json
-
-# Editor
-.vscode/
-.idea/
-
-# Dependency directories
-node_modules
-
-# Optional npm cache directory
-.npm
+eslint.config.*
+jest.config.*
+tsconfig*
+*.tgz
+*.tsbuildinfo
+coverage

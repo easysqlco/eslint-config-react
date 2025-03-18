@@ -1,18 +1,41 @@
-# Editor
-.vscode/
-.idea/
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
 
-# Dependency directories
-node_modules/
+# build
+dist
+build
 
-# Optional npm cache directory
-.npm
+# Logs
+logs
+*.log
 
-# Optional eslint cache
-.eslintcache
+# Runtime data
+pids
+*.pid
+*.seed
 
-# Optional stylelint cache
-.stylelintcache
+# editor
+.idea
+
+# npm
+.npmrc
+npm-debug.log.*
 
 # Output of 'npm pack'
 *.tgz
+
+# Cache
+.npm
+.eslintcache
+.stylelintcache
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# OS
+.DS_Store
+Thumbs.db
