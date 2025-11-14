@@ -30,6 +30,12 @@ export default [
       "react/self-closing-comp": "warn",
     },
 
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+
     // Common ignore patterns
     ignores: [
       "*.test.tsx",
