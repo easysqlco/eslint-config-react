@@ -3,17 +3,39 @@ import jsxA11y from "eslint-plugin-jsx-a11y";
 import hooksPlugin from "eslint-plugin-react-hooks";
 
 export default [
-  reactPlugin.configs.flat.recommended, // This is not a plugin object, but a shareable config object
-  reactPlugin.configs.flat["jsx-runtime"], // Add this if you are using React 17+
+  // Base React rules (flat config)
+  reactPlugin.configs.flat.recommended,
+
+  // React 17+ JSX runtime (no need for React import)
+  reactPlugin.configs.flat["jsx-runtime"],
+
+  // Accessibility rules
   jsxA11y.flatConfigs.recommended,
+
+  // Hooks plugin
   {
     plugins: {
       "react-hooks": hooksPlugin,
     },
     rules: {
-      "react/react-in-jsx-scope": "off",
+      // Hooks must always remain strict (bug prevention)
       ...hooksPlugin.configs.recommended.rules,
+
+      // Remove legacy rule (React import not required)
+      "react/react-in-jsx-scope": "off",
+
+      // Optional: reduce noise in React components
+      "react/prop-types": "off", // since you use TS occasionally
+      "react/jsx-boolean-value": ["warn", "never"],
+      "react/self-closing-comp": "warn",
     },
-    ignores: ["*.test.tsx"],
+
+    // Common ignore patterns
+    ignores: [
+      "*.test.tsx",
+      "*.stories.tsx",
+      "dist/**",
+      "build/**",
+    ],
   },
 ];
