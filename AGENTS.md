@@ -27,8 +27,8 @@
 
 - Peer ranges must stay compatible with `@easysql/eslint-config`.
 - Keep runtime-imported ESLint plugins in `dependencies`, not peers.
-- Keep `@easysql/eslint-config` as a local dev-only dependency for repo
-  self-linting; never publish it as a dependency or peer.
+- Keep `@easysql/eslint-config` as a dev-only dependency for repo self-linting;
+  never publish it as a dependency or peer.
 - Keep `eslint` in `peerDependencies` with the broadest verified compatible
   range.
 - Do not widen version ranges speculatively beyond documented support.

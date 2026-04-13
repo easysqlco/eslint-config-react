@@ -47,8 +47,8 @@ assert.equal(
 );
 assert.equal(
   packageJson.devDependencies["@easysql/eslint-config"],
-  "file:../eslint-config",
-  "@easysql/eslint-config should stay a local dev-only dependency for self-linting",
+  "^0.0.22",
+  "@easysql/eslint-config should stay a dev-only dependency for self-linting",
 );
 assert.deepEqual(Object.keys(packageJson.peerDependencies).sort(), ["eslint"]);
 assert.equal(

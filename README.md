@@ -51,6 +51,5 @@ export default [
   them separately.
 - `files` scoping stays in the consumer config so packages can decide their own
   lint surface.
-- In the EasySQL workspace, this repo lints itself with a local
-  `file:../eslint-config` dev dependency via
+- This repo lints itself with `@easysql/eslint-config` as a dev dependency via
   [eslint.config.mjs](/Users/metehan/Projects/easysqlco/eslint-config-react/eslint.config.mjs), but that package is not part of the published dependency contract.
