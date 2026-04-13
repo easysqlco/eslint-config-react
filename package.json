@@ -1,6 +1,6 @@
 {
   "name": "@easysqlco/eslint-config-react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Shared React ESLint flat config layer for EasySQL packages",
   "author": "EasySQL",
   "license": "MIT",
