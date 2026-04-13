@@ -18,10 +18,6 @@ pids
 # editor
 .idea
 
-# npm
-.npmrc
-npm-debug.log.*
-
 # Output of 'npm pack'
 *.tgz
 
