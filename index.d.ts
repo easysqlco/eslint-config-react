@@ -1,2 +1,3 @@
+export const recommendedWithoutJsxA11y: any[];
 declare const _default: any[];
 export default _default;
