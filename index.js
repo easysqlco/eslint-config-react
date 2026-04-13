@@ -8,7 +8,7 @@ const reactCoreConfigs = [
 ];
 
 const reactSharedConfig = {
-  name: "@easysql/eslint-config-react/shared",
+  name: "@easysqlco/eslint-config-react/shared",
   plugins: {
     "react-hooks": hooksPlugin,
   },

@@ -3,7 +3,7 @@
 ## Purpose
 
 - Publish the React-specific ESLint flat-config layer used by EasySQL packages.
-- Compose with `@easysql/eslint-config`; do not duplicate its TypeScript or
+- Compose with `@easysqlco/eslint-config`; do not duplicate its TypeScript or
   Prettier responsibilities here.
 
 ## Contract
@@ -25,10 +25,10 @@
 
 ## Dependencies
 
-- Peer ranges must stay compatible with `@easysql/eslint-config`.
+- Peer ranges must stay compatible with `@easysqlco/eslint-config`.
 - Keep runtime-imported ESLint plugins in `dependencies`, not peers.
-- Keep `@easysql/eslint-config` as a dev-only dependency for repo self-linting;
-  never publish it as a dependency or peer.
+- Keep `@easysqlco/eslint-config` as a dev-only dependency for repo self-linting
+  and, if declared for consumers, only as an optional peer.
 - Keep `eslint` in `peerDependencies` with the broadest verified compatible
   range.
 - Do not widen version ranges speculatively beyond documented support.
@@ -37,7 +37,7 @@
 
 - Match the shared-tooling suite on export style, package metadata clarity, and
   README structure.
-- Verify combined usage with `@easysql/eslint-config` and
+- Verify combined usage with `@easysqlco/eslint-config` and
   `@easysqlco/tsconfig/react` before changing package contract.
 
 ## Validation

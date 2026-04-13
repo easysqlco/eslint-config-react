@@ -1,4 +1,4 @@
-import eslintConfig, { tsLanguageOptions } from "@easysql/eslint-config";
+import eslintConfig, { tsLanguageOptions } from "@easysqlco/eslint-config";
 
 export default [
   ...eslintConfig,

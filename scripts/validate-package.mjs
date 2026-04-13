@@ -13,6 +13,11 @@ const packageJson = JSON.parse(
   await readFile(path.join(rootDir, "package.json"), "utf8"),
 );
 
+assert.equal(
+  packageJson.name,
+  "@easysqlco/eslint-config-react",
+  "package name must use the GitHub Packages scope",
+);
 const filesConfig = {
   files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
 };
@@ -36,25 +41,38 @@ assert.deepEqual(Object.keys(packageJson.dependencies).sort(), [
   "eslint-plugin-react-hooks",
 ]);
 assert.equal(
-  packageJson.dependencies["@easysql/eslint-config"],
+  packageJson.dependencies["@easysqlco/eslint-config"],
   undefined,
-  "@easysql/eslint-config must not be published as a runtime dependency",
+  "@easysqlco/eslint-config must not be published as a runtime dependency",
 );
 assert.equal(
-  packageJson.peerDependencies["@easysql/eslint-config"],
-  undefined,
-  "@easysql/eslint-config must not be a published peer dependency",
+  packageJson.devDependencies["@easysqlco/eslint-config"],
+  "^0.0.24",
+  "@easysqlco/eslint-config should stay a dev-only dependency for self-linting",
 );
-assert.equal(
-  packageJson.devDependencies["@easysql/eslint-config"],
-  "^0.0.22",
-  "@easysql/eslint-config should stay a dev-only dependency for self-linting",
-);
-assert.deepEqual(Object.keys(packageJson.peerDependencies).sort(), ["eslint"]);
+assert.deepEqual(Object.keys(packageJson.peerDependencies).sort(), [
+  "@easysqlco/eslint-config",
+  "eslint",
+]);
 assert.equal(
   packageJson.peerDependencies.eslint,
   ">= 9.7 < 10",
   "eslint peer range must stay aligned with sibling tooling packages",
+);
+assert.equal(
+  packageJson.peerDependencies["@easysqlco/eslint-config"],
+  ">= 0.0.24",
+  "@easysqlco/eslint-config should be an optional peer for consumers",
+);
+assert.equal(
+  packageJson.peerDependenciesMeta?.["@easysqlco/eslint-config"]?.optional,
+  true,
+  "@easysqlco/eslint-config must stay an optional peer",
+);
+assert.equal(
+  packageJson.publishConfig?.registry,
+  "https://npm.pkg.github.com",
+  "publishConfig.registry must target GitHub Packages",
 );
 
 const recommendedEslint = new ESLint({
