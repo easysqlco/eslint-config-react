@@ -26,6 +26,8 @@ jobs:
 
       - name: Install
         run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Validate package
         run: npm run validate
