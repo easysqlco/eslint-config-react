@@ -43,9 +43,10 @@
   ],
   "scripts": {
     "build": "tsc",
+    "check:pack": "npm pack --dry-run",
     "lint": "eslint .",
     "test": "npm run validate",
-    "validate": "npm run lint && npm run build && node ./scripts/validate-package.mjs"
+    "validate": "npm run lint && npm run build && node ./scripts/validate-package.mjs && npm run check:pack"
   },
   "dependencies": {
     "eslint-plugin-jsx-a11y": "^6.10.2",
