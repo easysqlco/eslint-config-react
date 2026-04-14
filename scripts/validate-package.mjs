@@ -47,7 +47,7 @@ assert.equal(
 );
 assert.equal(
   packageJson.devDependencies["@easysqlco/eslint-config"],
-  "^0.0.24",
+  "^0.0.25",
   "@easysqlco/eslint-config should stay a dev-only dependency for self-linting",
 );
 assert.deepEqual(Object.keys(packageJson.peerDependencies).sort(), [
@@ -61,7 +61,7 @@ assert.equal(
 );
 assert.equal(
   packageJson.peerDependencies["@easysqlco/eslint-config"],
-  ">= 0.0.24",
+  ">= 0.0.25",
   "@easysqlco/eslint-config should be an optional peer for consumers",
 );
 assert.equal(
